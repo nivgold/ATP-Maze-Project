@@ -1,3 +1,32 @@
 .root{
-    -fx-background-color: #090300;
+    -fx-background-image: url("file:resources/background1.png");
+    -fx-background-position: center;
+    -fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
+}
+
+
+#label_Title{
+    -fx-text-fill: #82ff70;
+    -fx-wrap-text: true;
+    -fx-font-family: "Algerian", cursive, sans-serif;
+    -fx-font-size: 170px;
+}
+
+#character_left{
+    -fx-background-image: url("file:resources/Characters/ariel.jpg");
+    -fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
+}
+
+#character_middle{
+    -fx-background-image: url("file:resources/Characters/armin.jpg");
+    -fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
+}
+
+#character_right{
+    -fx-background-image: url("file:resources/Characters/meir.jpg");
+    -fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
 }
