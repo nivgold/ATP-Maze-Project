@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import View.CharacterDisplayer?>
+<?import View.MazeDisplayer?>
+<?import View.SolutionDisplayer?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="View.GameController"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<?import javafx.scene.image.ImageView?>
+<BorderPane onKeyPressed="#KeyPressed" prefHeight="913.0" prefWidth="1146.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.GameController">
+    <top>
+        <VBox alignment="TOP_CENTER">
+            <MenuBar fx:id="menuBar">
+                <Menu fx:id="menu_File" text="File">
+                    <MenuItem fx:id="menu_File_New" onAction="#file_New_Clicked" text="New" />
+                    <MenuItem fx:id="menu_File_Save" onAction="#file_Save_Clicked" text="Save" />
+                    <MenuItem fx:id="menu_File_Load" onAction="#file_Load_Clicked" text="Load" />
+                </Menu>
+                <Menu fx:id="menu_Options" text="Options">
+                    <MenuItem fx:id="menu_Options_Properties" text="Properties" disable="true"/>
+                    <RadioMenuItem fx:id="menu_Options_Mute" mnemonicParsing="false" onAction="#mute_Clicked" text="Mute" />
+                </Menu>
+                <Menu fx:id="menu_Exit"/>
+                <Menu fx:id="menu_Help" text="Help" />
+                <Menu fx:id="menu_About" text="About" />
+            </MenuBar>
+        </VBox>
+    </top>
+   <center>
+       <Pane fx:id="center_Pane" onScroll="#handle">
+           <MazeDisplayer fx:id="mazeDisplayer" height="600"  width="600" BorderPane.alignment="CENTER" />
+           <CharacterDisplayer fx:id="characterDisplayer" height="100" width="100" />
+           <SolutionDisplayer fx:id="solutionDisplayer" />
+           <ImageView fx:id="winner2"/>
+           <ImageView fx:id="winner"/>
+           <BorderPane.margin>
+               <Insets bottom="1.0" right="1.0" />
+           </BorderPane.margin>
+           <opaqueInsets>
+               <Insets />
+           </opaqueInsets>
+       </Pane>
+   </center>
+   <right>
+      <VBox fx:id="buttons_VBox" prefHeight="200.0" prefWidth="100.0" spacing="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="button_TryAgain" alignment="CENTER" mnemonicParsing="false" onAction="#try_Again_Clicked" text="Try Again" onMouseExited="#tryAgain_OnMouseExit" onMouseEntered="#tryAgain_OnMouseEntered">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <ToggleButton fx:id="button_Solution" mnemonicParsing="false" onAction="#solve_Clicked" prefHeight="39.0" prefWidth="100.0" text="Solution" onMouseEntered="#solution_OnMouseEntered" onMouseExited="#solution_OnMouseExit">
+               <font>
+                  <Font size="18.0" />
+               </font></ToggleButton>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

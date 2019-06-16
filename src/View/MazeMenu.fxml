@@ -14,20 +14,37 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="913.0" prefWidth="1146.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.CheckMenuItem?>
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="View.MazeMenuController">
     <top>
         <VBox alignment="TOP_CENTER">
             <MenuBar>
                 <Menu fx:id="menu_File" text="File">
-                    <MenuItem fx:id="menu_File_New" text="New" />
-                    <MenuItem fx:id="menu_File_Save" text="Save" />
-                    <MenuItem fx:id="menu_File_Load" text="Load" />
+                    <MenuItem fx:id="menu_File_New" text="New" disable="true"/>
+                    <MenuItem fx:id="menu_File_Save" text="Save" disable="true"/>
+                    <MenuItem fx:id="menu_File_Load" text="Load" disable="true"/>
                 </Menu>
                 <Menu fx:id="menu_Options" text="Options">
-                    <MenuItem fx:id="menu_Options_Properties" text="Properties" />
+                    <Menu fx:id="menu_Options_Properties" text="Properties">
+                        <Menu text="Solver">
+                            <CheckMenuItem fx:id="BestFirstSearch" text="BestFirstSearch" onAction="#solver_BestFirstSearch"/>
+                            <CheckMenuItem fx:id="BreathFirstSearch" text="BreathFirstSearch" onAction="#solver_BreadthFirstSearch"/>
+                            <CheckMenuItem fx:id="DepthFirstSearch" text="DepthFirstSearch" onAction="#solver_DepthFirstSearch"/>
+                        </Menu>
+                        <Menu text="Generator">
+                            <CheckMenuItem fx:id="EmptyMazeGenerator" text="EmptyMazeGenerator" onAction="#generator_EmptyMazeGenerator"/>
+                            <CheckMenuItem fx:id="RandomMazeGenerator" text="RandomMazeGenerator" onAction="#generator_SimpleMazeGenerator"/>
+                            <CheckMenuItem fx:id="MyMazeGenerator" text="MyMazeGenerator" onAction="#generator_MyMazeGenerator"/>
+                        </Menu>
+                        <Menu text="pool num">
+                            <MenuItem fx:id="thread_Pool"/>
+                        </Menu>
+                    </Menu>
+                    <RadioMenuItem fx:id="menu_Options_Mute" mnemonicParsing="false" text="Mute" disable="true"/>
                 </Menu>
-                <Menu fx:id="menu_Exit" text="Exit" />
+                <Menu fx:id="menu_Exit"/>
                 <Menu fx:id="menu_Help" text="Help" />
                 <Menu fx:id="menu_About" text="About" />
             </MenuBar>
@@ -111,10 +128,7 @@
     <center>
     </center>
    <center>
-      <Button fx:id="button_Play" mnemonicParsing="false" prefHeight="73.0" prefWidth="197.0" text="Play" BorderPane.alignment="TOP_CENTER" onAction="#play_Clicked">
-         <font>
-            <Font size="35.0" />
-         </font>
+      <Button fx:id="button_Play" mnemonicParsing="false" prefHeight="73.0" prefWidth="197.0" text="Play" BorderPane.alignment="TOP_CENTER" onAction="#play_Clicked" onMouseEntered="#play_OnMouseEntered" onMouseExited="#play_OnMouseExit">
          <BorderPane.margin>
             <Insets top="150.0" />
          </BorderPane.margin>

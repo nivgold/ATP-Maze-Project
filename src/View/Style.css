@@ -13,20 +13,174 @@
     -fx-font-size: 170px;
 }
 
+#textField_MazeRows{
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+#textField_MazeColumns{
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+#textField_PlayerName{
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+#button_Solution{
+    -fx-background-color:
+            linear-gradient(#f0ff35, #a9ff00),
+            radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: #395306;
+}
+
+#buttons_VBox{
+    -fx-background-color: #395306;
+}
+#button_Solution:selected{
+    -fx-effect: innershadow( three-pass-box, rgba(0, 0, 0, 0.4),5,0.0,5,5);
+    -fx-background-color:
+            linear-gradient(#f0ff35, #a9ff00),
+            radial-gradient(center 50% -40%, radius 200%, #85b934 45%, #71b900 50%);
+}
+
+
+#button_TryAgain{
+    -fx-background-color:
+            linear-gradient(#f0ff35, #a9ff00),
+            radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: #395306;
+}
+
+#button_Next{
+    -fx-background-color:
+            linear-gradient(#ffd65b, #e68400),
+            linear-gradient(#ffef84, #f2ba44),
+            linear-gradient(#ffea6a, #efaa22),
+            linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+    -fx-padding: 10 20 10 20;
+    -fx-pref-width: 250;
+    -fx-pref-height: 75;
+}
+
+#menu_File{
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+#menu_Options{
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+#menu_Exit{
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+#menu_About{
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+#menu_Help{
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+#menuBar{
+    -fx-padding: 8 15 8 15;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 8;
+    -fx-background-color:
+            linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
+            #9d4024,
+            #d86e3a,
+            radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+}
+#menu_Options_Properties{
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+#menu_Options_Mute{
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+
+#button_Next:pressed{
+    -fx-effect: innershadow( three-pass-box, rgba(0, 0, 0, 0.4),25,0.0,7,7);
+    -fx-background-color:
+            linear-gradient(#bba63c, #ba6e00),
+            linear-gradient(#b9a95f, #b98b31),
+            linear-gradient(#b8a353, #bb8720),
+            linear-gradient(#b8a43d 0%, #b88902 50%, #b9780b 100%),
+    radial-gradient(center 50% -40%, radius 200%, #baab61 45%, #bb8f34 50%);
+}
+#button_Play:pressed{
+    -fx-effect: innershadow( three-pass-box, rgba(0, 0, 0, 0.4),25,0.0,7,7);
+    -fx-background-color:
+            linear-gradient(#bba63c, #ba6e00),
+            linear-gradient(#b9a95f, #b98b31),
+            linear-gradient(#b8a353, #bb8720),
+            linear-gradient(#b8a43d 0%, #b88902 50%, #b9780b 100%),
+            radial-gradient(center 50% -40%, radius 200%, #baab61 45%, #bb8f34 50%);
+}
+
+#button_Play{
+    -fx-background-color:
+            linear-gradient(#ffd65b, #e68400),
+            linear-gradient(#ffef84, #f2ba44),
+            linear-gradient(#ffea6a, #efaa22),
+            linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+    -fx-padding: 10 20 10 20;
+    -fx-pref-width: 250;
+    -fx-pref-height: 75;
+}
+
+
+
 #character_left{
-    -fx-background-image: url("file:resources/Characters/ariel.jpg");
+    -fx-background-image: url("file:resources/Characters/Maplestory/front.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
 }
 
 #character_middle{
-    -fx-background-image: url("file:resources/Characters/armin.jpg");
+    -fx-background-image: url("file:resources/Characters/Troll/front.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
 }
 
 #character_right{
-    -fx-background-image: url("file:resources/Characters/meir.jpg");
+    -fx-background-image: url("file:resources/Characters/Mario/front.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
 }
