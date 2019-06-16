@@ -1,0 +1,139 @@
+.root{
+    -fx-background-image: url("file:resources/Game/background1.jpg");
+    -fx-background-position: center;
+    -fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
+}
+
+
+#label_Title{
+    -fx-text-fill: #82ff70;
+    -fx-wrap-text: true;
+    -fx-font-family: "Algerian", cursive, sans-serif;
+    -fx-font-size: 170px;
+}
+
+#textField_MazeRows{
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+#textField_MazeColumns{
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+#button_Next{
+    -fx-background-color:
+            linear-gradient(#ffd65b, #e68400),
+            linear-gradient(#ffef84, #f2ba44),
+            linear-gradient(#ffea6a, #efaa22),
+            linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+    -fx-padding: 10 20 10 20;
+    -fx-pref-width: 250;
+    -fx-pref-height: 75;
+}
+
+.menu-bar{
+    -fx-background-color:
+            #000000,
+            linear-gradient(#7ebcea, #2f4b8f),
+            linear-gradient(#426ab7, #263e75),
+            linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 2 30 2 30;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+.menu-item{
+    -fx-background-color:
+            #000000,
+            linear-gradient(#7ebcea, #2f4b8f),
+            linear-gradient(#426ab7, #263e75),
+            linear-gradient(#3c4cd6, #3c4cd6);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 2 30 2 30;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 0, 0.0 , 0 , 1);
+}
+
+.menu{
+    -fx-background-color:
+            #000000,
+            linear-gradient(#7ebcea, #2f4b8f),
+            linear-gradient(#426ab7, #263e75),
+            linear-gradient(#3c4cd6, #3c4cd6);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 2 30 2 30;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 0, 0.0 , 0 , 1);
+}
+
+#button_Next:pressed{
+    -fx-effect: innershadow( three-pass-box, rgba(0, 0, 0, 0.4),25,0.0,7,7);
+    -fx-background-color:
+            linear-gradient(#bba63c, #ba6e00),
+            linear-gradient(#b9a95f, #b98b31),
+            linear-gradient(#b8a353, #bb8720),
+            linear-gradient(#b8a43d 0%, #b88902 50%, #b9780b 100%),
+    radial-gradient(center 50% -40%, radius 200%, #baab61 45%, #bb8f34 50%);
+}
+#button_Play:pressed{
+    -fx-effect: innershadow( three-pass-box, rgba(0, 0, 0, 0.4),25,0.0,7,7);
+    -fx-background-color:
+            linear-gradient(#bba63c, #ba6e00),
+            linear-gradient(#b9a95f, #b98b31),
+            linear-gradient(#b8a353, #bb8720),
+            linear-gradient(#b8a43d 0%, #b88902 50%, #b9780b 100%),
+            radial-gradient(center 50% -40%, radius 200%, #baab61 45%, #bb8f34 50%);
+}
+
+#button_Play{
+    -fx-background-color:
+            linear-gradient(#ffd65b, #e68400),
+            linear-gradient(#ffef84, #f2ba44),
+            linear-gradient(#ffea6a, #efaa22),
+            linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+    -fx-padding: 10 20 10 20;
+    -fx-pref-width: 250;
+    -fx-pref-height: 75;
+}
+
+
+
+#character_left{
+    -fx-background-image: url("file:resources/Characters/Maplestory/front.jpg");
+    -fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
+}
+
+#character_middle{
+    -fx-background-image: url("file:resources/Characters/Troll/front.jpg");
+    -fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
+}
+
+#character_right{
+    -fx-background-image: url("file:resources/Characters/Mario/front.jpg");
+    -fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
+}
+
+
