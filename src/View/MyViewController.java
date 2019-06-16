@@ -188,10 +188,14 @@ public class MyViewController{
                     stage.setTitle("About");
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     Parent root = fxmlLoader.load(getClass().getResource("About.fxml").openStream());
-                    Scene scene = new Scene(root, 580, 350);
+                    Scene scene = new Scene(root, 580, 300);
                     stage.setScene(scene);
                     stage.initModality(Modality.APPLICATION_MODAL); //Lock the window until it closes
                     stage.getIcons().add(new Image(new FileInputStream("resources\\Icon.png")));
+                    stage.setMaxWidth(580);
+                    stage.setMaxHeight(300);
+                    stage.setMinWidth(580);
+                    stage.setMinHeight(300);
                     stage.show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -207,13 +211,18 @@ public class MyViewController{
             public void handle(MouseEvent event) {
                 try {
                     Stage stage = new Stage();
-                    stage.setTitle("About");
+                    stage.setTitle("Help");
                     FXMLLoader fxmlLoader = new FXMLLoader();
-                    Parent root = fxmlLoader.load(getClass().getResource("About.fxml").openStream());
-                    Scene scene = new Scene(root, 400, 300);
+                    Parent root = fxmlLoader.load(getClass().getResource("Help.fxml").openStream());
+                    Scene scene = new Scene(root, 600, 400);
                     stage.setScene(scene);
+                    root.setStyle("-fx-background-color: #70c8a0");
                     stage.initModality(Modality.APPLICATION_MODAL); //Lock the window until it closes
-
+                    stage.getIcons().add(new Image(new FileInputStream("resources\\Icon.png")));
+                    stage.setMaxWidth(600);
+                    stage.setMaxHeight(400);
+                    stage.setMinWidth(600);
+                    stage.setMinHeight(400);
                     stage.show();
                 } catch (IOException e) {
                     e.printStackTrace();

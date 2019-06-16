@@ -45,8 +45,8 @@
                     <RadioMenuItem fx:id="menu_Options_Mute" mnemonicParsing="false" text="Mute" disable="true"/>
                 </Menu>
                 <Menu fx:id="menu_Exit"/>
-                <Menu fx:id="menu_Help" text="Help" />
-                <Menu fx:id="menu_About" text="About" />
+                <Menu fx:id="menu_Help"/>
+                <Menu fx:id="menu_About"/>
             </MenuBar>
             <Label fx:id="label_Title" alignment="CENTER" minHeight="129.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="272.0" prefWidth="733.0" text="Mazes">
                 <font>

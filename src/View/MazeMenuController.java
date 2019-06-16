@@ -13,13 +13,16 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -38,6 +41,8 @@ public class MazeMenuController{
     public javafx.scene.control.CheckMenuItem MyMazeGenerator;
     public javafx.scene.control.MenuItem thread_Pool;
     public javafx.scene.control.Button button_Play;
+    public javafx.scene.control.Menu menu_About;
+    public javafx.scene.control.Menu menu_Help;
 
     private boolean play;
     private String characterName;
@@ -140,6 +145,8 @@ public class MazeMenuController{
         this.mediaPlayer=mediaPlayer;
         field();
         set_Menu_Exit();
+        set_Menu_About();
+        set_Menu_Help();
     }
 
     private void set_Menu_Exit(){
@@ -237,6 +244,64 @@ public class MazeMenuController{
                 "-fx-pref-width: 250;" +
                 "-fx-pref-height: 75;");
     }
+
+    private void set_Menu_Help(){
+        Label label = new Label("Help");
+        label.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    Stage stage = new Stage();
+                    stage.setTitle("Help");
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    Parent root = fxmlLoader.load(getClass().getResource("Help.fxml").openStream());
+                    Scene scene = new Scene(root, 600, 400);
+                    stage.setScene(scene);
+                    root.setStyle("-fx-background-color: #70c8a0");
+                    stage.initModality(Modality.APPLICATION_MODAL); //Lock the window until it closes
+                    stage.getIcons().add(new Image(new FileInputStream("resources\\Icon.png")));
+                    stage.setMaxWidth(600);
+                    stage.setMaxHeight(400);
+                    stage.setMinWidth(600);
+                    stage.setMinHeight(400);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        menu_Help.setGraphic(label);
+    }
+
+    private void set_Menu_About(){
+        Label label = new Label("About");
+        label.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    Stage stage = new Stage();
+                    stage.setTitle("About");
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    Parent root = fxmlLoader.load(getClass().getResource("About.fxml").openStream());
+                    Scene scene = new Scene(root, 580, 300);
+                    stage.setScene(scene);
+                    stage.initModality(Modality.APPLICATION_MODAL); //Lock the window until it closes
+                    stage.getIcons().add(new Image(new FileInputStream("resources\\Icon.png")));
+                    stage.setMaxWidth(580);
+                    stage.setMaxHeight(300);
+                    stage.setMinWidth(580);
+                    stage.setMinHeight(300);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        menu_About.setGraphic(label);
+    }
+
+
+
 
 
 

@@ -29,7 +29,7 @@ import java.util.Optional;
         **JPG pictures
         Not-Square maze bug------------------------------- :)
         Winner-------------------------------------------- :)
-        Finish Menu
+        Finish Menu--------------------------------------- :)
         Maximize------------------------------------------ :)
  */
 public class Main extends Application {

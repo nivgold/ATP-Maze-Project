@@ -25,6 +25,7 @@ import javafx.scene.input.ScrollEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -61,6 +62,8 @@ public class GameController implements IView, Observer {
     public javafx.scene.image.ImageView winner2;
     public javafx.scene.control.MenuItem menu_File_Save;
     public javafx.scene.control.Menu menu_Exit;
+    public javafx.scene.control.Menu menu_About;
+    public javafx.scene.control.Menu menu_Help;
 
 
 
@@ -140,6 +143,9 @@ public class GameController implements IView, Observer {
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setVolume(0.02);
         mediaPlayer.setAutoPlay(true);
+
+        set_Menu_About();
+        set_Menu_Help();
 
         center_Pane.scaleXProperty().bind(myScale);
         center_Pane.scaleYProperty().bind(myScale);
@@ -420,6 +426,61 @@ public class GameController implements IView, Observer {
                 "radial-gradient(center 50% -40%, radius 200%, #85b934 45%, #71b900 50%);");
     }
 
+
+    private void set_Menu_Help(){
+        Label label = new Label("Help");
+        label.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    Stage stage = new Stage();
+                    stage.setTitle("Help");
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    Parent root = fxmlLoader.load(getClass().getResource("Help.fxml").openStream());
+                    Scene scene = new Scene(root, 600, 400);
+                    stage.setScene(scene);
+                    root.setStyle("-fx-background-color: #70c8a0");
+                    stage.initModality(Modality.APPLICATION_MODAL); //Lock the window until it closes
+                    stage.getIcons().add(new Image(new FileInputStream("resources\\Icon.png")));
+                    stage.setMaxWidth(600);
+                    stage.setMaxHeight(400);
+                    stage.setMinWidth(600);
+                    stage.setMinHeight(400);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        menu_Help.setGraphic(label);
+    }
+
+    private void set_Menu_About(){
+        Label label = new Label("About");
+        label.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    Stage stage = new Stage();
+                    stage.setTitle("About");
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    Parent root = fxmlLoader.load(getClass().getResource("About.fxml").openStream());
+                    Scene scene = new Scene(root, 580, 300);
+                    stage.setScene(scene);
+                    stage.initModality(Modality.APPLICATION_MODAL); //Lock the window until it closes
+                    stage.getIcons().add(new Image(new FileInputStream("resources\\Icon.png")));
+                    stage.setMaxWidth(580);
+                    stage.setMaxHeight(300);
+                    stage.setMinWidth(580);
+                    stage.setMinHeight(300);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        menu_About.setGraphic(label);
+    }
 
 
 

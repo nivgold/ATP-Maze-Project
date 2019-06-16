@@ -31,8 +31,8 @@
                     <RadioMenuItem fx:id="menu_Options_Mute" mnemonicParsing="false" onAction="#mute_Clicked" text="Mute" />
                 </Menu>
                 <Menu fx:id="menu_Exit"/>
-                <Menu fx:id="menu_Help" text="Help" />
-                <Menu fx:id="menu_About" text="About" />
+                <Menu fx:id="menu_Help"/>
+                <Menu fx:id="menu_About"/>
             </MenuBar>
         </VBox>
     </top>
