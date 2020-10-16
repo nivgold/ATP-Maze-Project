@@ -1,5 +1,9 @@
 # ATP-Maze-Project
 
+
+### Summary
+---
+
 A project that was made as part of the course ['Advenced Topics in Programming'](https://moodle2.bgu.ac.il/moodle/pluginfile.php/1750980/mod_resource/content/5/syllabus2019.pdf).
 
 ATP-Maze-Project is a maze game that was built with JAVA and contains some popular, well known design patterns such as Observer, Strategy etc.
